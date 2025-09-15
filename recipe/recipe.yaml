@@ -1,7 +1,7 @@
 context:
   name: mxml
-  version: "2.0.1"
-  sha256: 67790de3d2faef1c59ecb55559de7aee5d2b710911b58254b6e28ac510190441
+  version: "2.0.2"
+  sha256: fb0720c8b1927dbdcb1e6bf9cdf662ef14f0ab6d3f9891ceba74b9913fad4540
   build_number: 0
 
 package:
@@ -15,19 +15,18 @@ source:
 build:
   number: ${{ build_number }}
   script:
+    - sed -i 's/NAME fastfloat/NAME fast_float/' CMakeLists.txt
+    - sed -i 's/mxml STATIC/mxml SHARED/' CMakeLists.txt
     - if: unix
       then:
         - set -exo pipefail
-        - sed -i 's/mxml STATIC/mxml SHARED/' CMakeLists.txt
         - export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
         - cmake -S . -B build ${CMAKE_ARGS} -DBUILD_TESTING=OFF
         - cmake --build build --config Release --parallel ${CPU_COUNT}
-        - 
-          #ctest -V --test-dir build
+        - #ctest -V --test-dir build
         - cmake --install build
       else:
         - echo on
-        - sed -i 's/mxml STATIC/mxml SHARED/' CMakeLists.txt
         - cmake -S . -B build -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=ON %CMAKE_ARGS%
         - if errorlevel 1 exit 1
         - cmake --build build --config Release --parallel %CPU_COUNT%
