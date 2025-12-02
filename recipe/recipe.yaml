@@ -1,7 +1,7 @@
 context:
   name: mxml
-  version: "2.0.2"
-  sha256: fb0720c8b1927dbdcb1e6bf9cdf662ef14f0ab6d3f9891ceba74b9913fad4540
+  version: "2.0.4"
+  sha256: f1b59ee9174621f2a7ce8c7c5318334c6919dae19decb974bc6d8d4c00c9b495
   build_number: 0
 
 package:
@@ -23,7 +23,8 @@ build:
         - export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
         - cmake -S . -B build ${CMAKE_ARGS} -DBUILD_TESTING=OFF
         - cmake --build build --config Release --parallel ${CPU_COUNT}
-        - #ctest -V --test-dir build
+        - 
+          #ctest -V --test-dir build
         - cmake --install build
       else:
         - echo on
