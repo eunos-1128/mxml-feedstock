@@ -3,15 +3,15 @@ About mxml-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mxml-feedstock/blob/main/LICENSE.txt)
 
-Home: https://mhekkel.github.io/mxml
+Home: https://mhekkel.github.io/zeem
 
 Package license: BSD-2-Clause
 
 Summary: A C++ Module Library offering a full XML library with validating parser, DOM tree, XPaths and serialization.
 
-Development: https://github.com/mhekkel/mxml
+Development: https://github.com/mhekkel/zeem
 
-Documentation: https://mhekkel.github.io/mxml
+Documentation: https://mhekkel.github.io/zeem
 
 This is a feature complete XML library containing a validating parser as well as a modern C++ API for the data structures. It also supports serializing custom data structures.
 The core of this library is a validating XML parser with DTD processing and all. On top of this are implemented an API for manipulating XML data in a DOM like fashion and a serialization API. As a bonus there’s also an XPath implementation, albeit this is limited to XPath 1.0.
@@ -160,12 +160,12 @@ it is possible to build and upload installable packages to the
 [conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
-To manage the continuous integration and simplify feedstock maintenance
+To manage the continuous integration and simplify feedstock maintenance,
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
-For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
+For more information, please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
@@ -192,7 +192,7 @@ merged, the recipe will be re-built and uploaded automatically to the
 everybody to install and use from the `conda-forge` channel.
 Note that all branches in the conda-forge/mxml-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
-on branches in forks and branches in the main repository should only be used to
+on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:

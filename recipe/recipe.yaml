@@ -1,7 +1,7 @@
 context:
   name: mxml
-  version: "2.0.2"
-  sha256: fb0720c8b1927dbdcb1e6bf9cdf662ef14f0ab6d3f9891ceba74b9913fad4540
+  version: "2.0.3"
+  sha256: 90d530c164ac94cac10bc79eb3f40af5e3a49b234164ed0211c389bfcd41b994
   build_number: 0
 
 package:
@@ -21,9 +21,9 @@ build:
       then:
         - set -exo pipefail
         - export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
-        - cmake -S . -B build ${CMAKE_ARGS} -DBUILD_TESTING=OFF
+        - cmake -S . -B build ${CMAKE_ARGS} ${EXTRA_CMAKE_ARGS} -DBUILD_TESTING=OFF
         - cmake --build build --config Release --parallel ${CPU_COUNT}
-        - #ctest -V --test-dir build
+        # - ctest -V --test-dir build
         - cmake --install build
       else:
         - echo on
@@ -65,9 +65,9 @@ tests:
           - if not exist "%LIBRARY_PREFIX%\bin\mxml.dll" exit /b 1
 
 about:
-  homepage: https://mhekkel.github.io/mxml
-  repository: https://github.com/mhekkel/mxml
-  documentation: https://mhekkel.github.io/mxml
+  homepage: https://mhekkel.github.io/zeem
+  repository: https://github.com/mhekkel/zeem
+  documentation: https://mhekkel.github.io/zeem
   license: BSD-2-Clause
   license_file: LICENSE
   summary: "A C++ Module Library offering a full XML library with validating parser, DOM tree, XPaths and serialization."
