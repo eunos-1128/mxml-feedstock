@@ -66,9 +66,9 @@ tests:
           - if not exist "%LIBRARY_PREFIX%\bin\mxml.dll" exit /b 1
 
 about:
-  homepage: https://mhekkel.github.io/mxml
-  repository: https://github.com/mhekkel/mxml
-  documentation: https://mhekkel.github.io/mxml
+  homepage: https://mhekkel.github.io/zeem
+  repository: https://github.com/mhekkel/zeem
+  documentation: https://mhekkel.github.io/zeem
   license: BSD-2-Clause
   license_file: LICENSE
   summary: "A C++ Module Library offering a full XML library with validating parser, DOM tree, XPaths and serialization."
