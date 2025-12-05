@@ -15,7 +15,7 @@ Documentation: https://mhekkel.github.io/zeem
 
 This is a feature complete XML library containing a validating parser as well as a modern C++ API for the data structures. It also supports serializing custom data structures.
 The core of this library is a validating XML parser with DTD processing and all. On top of this are implemented an API for manipulating XML data in a DOM like fashion and a serialization API. As a bonus there’s also an XPath implementation, albeit this is limited to XPath 1.0.
-This XML library was extracted from [libzeep](https://github.com/mhekkel/libzeep) since having a separate and simple XML library is more convenient. The API is unfortunately no longer compatible since the goal was to be more standards compliant. E.g., mxml::element should now be a complete [Sequence Container](https://en.cppreference.com/w/cpp/named_req/SequenceContainer).
+This XML library was extracted from [libzeep](https://github.com/mhekkel/libzeep) since having a separate and simple XML library is more convenient. The API is unfortunately no longer compatible since the goal was to be more standards compliant. E.g., zeem::element should now be a complete [Sequence Container](https://en.cppreference.com/w/cpp/named_req/SequenceContainer).
 
 Current build status
 ====================

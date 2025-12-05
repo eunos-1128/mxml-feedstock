@@ -1,7 +1,7 @@
 context:
   name: mxml
-  version: "2.0.4"
-  sha256: 06e1ff2ee662b250162e5510cb5f7ddee6ce2eb4a42b9e267f0f22ca7b857f7c
+  version: "2.0.5"
+  sha256: cf82135e85c856e700ecaeb0a046769c84827166e6218b34839bf06301466e6f
   build_number: 0
 
 package:
@@ -15,7 +15,6 @@ source:
 build:
   number: ${{ build_number }}
   script:
-    - sed -i 's/NAME fastfloat/NAME fast_float/' CMakeLists.txt
     - if: unix
       then:
         - set -exo pipefail
@@ -56,12 +55,12 @@ tests:
   - script:
       - if: unix
         then:
-          - test -d ${PREFIX}/include/mxml
-          - test -f ${PREFIX}/lib/libmxml${SHLIB_EXT}
+          - test -d ${PREFIX}/include/zeem
+          - test -f ${PREFIX}/lib/libzeem${SHLIB_EXT}
         else:
-          - if not exist "%LIBRARY_PREFIX%\include\mxml\" exit /b 1
-          - if not exist "%LIBRARY_PREFIX%\lib\mxml.lib" exit /b 1
-          - if not exist "%LIBRARY_PREFIX%\bin\mxml.dll" exit /b 1
+          - if not exist "%LIBRARY_PREFIX%\include\zeem\" exit /b 1
+          - if not exist "%LIBRARY_PREFIX%\lib\zeem.lib" exit /b 1
+          - if not exist "%LIBRARY_PREFIX%\bin\zeem.dll" exit /b 1
 
 about:
   homepage: https://mhekkel.github.io/zeem
@@ -80,7 +79,7 @@ about:
 
     This XML library was extracted from [libzeep](https://github.com/mhekkel/libzeep) since having a separate and simple XML library is more convenient.
     The API is unfortunately no longer compatible since the goal was to be more standards compliant.
-    E.g., mxml::element should now be a complete [Sequence Container](https://en.cppreference.com/w/cpp/named_req/SequenceContainer).
+    E.g., zeem::element should now be a complete [Sequence Container](https://en.cppreference.com/w/cpp/named_req/SequenceContainer).
 
 extra:
   recipe-maintainers:
