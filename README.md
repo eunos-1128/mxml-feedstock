@@ -1,9 +1,6 @@
 About mxml-feedstock
 ====================
 
-**The package name for mxml was changed to zeem starting from version 2.0.5.**
-**Please use [zeem](https://mhekkel.github.io/zeem) instead of mxml if you use mxml with the version more than v2.0.4.**
-
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mxml-feedstock/blob/main/LICENSE.txt)
 
 Home: https://mhekkel.github.io/mxml
